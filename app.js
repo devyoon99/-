@@ -48,3 +48,66 @@ function inputProductData(NumberOfCard, data) {
     $(".product-price__number" + NumberOfCard).text(e.products[data].price);
   });
 }
+
+$(".input").on("input", function () {
+  $(".product-card__container").html("");
+  $(".product-price__container").html("");
+
+  if ($(".input").val() === "") {
+    $(".product-card__container").html("");
+    $(".product-price__container").html("");
+    MakeAllProductCard();
+  } else if ($(".input").val() === "레" || $(".input").val() === "원") {
+    $(".product-card__container").html("");
+    $(".product-price__container").html("");
+    MakeProductCard(2);
+    inputProductData(0, 1);
+    inputProductData(1, 3);
+  } else if (
+    $(".input").val() === "식" ||
+    $(".input").val() === "기" ||
+    $(".input").val() === "세" ||
+    $(".input").val() === "척"
+  ) {
+    $(".product-card__container").html("");
+    $(".product-price__container").html("");
+    MakeProductCard(1);
+    inputProductData(0, 0);
+  } else if (
+    $(".input").val() === "목" ||
+    $(".input").val() === "침" ||
+    $(".input").val() === "대" ||
+    $(".input").val() === "프" ||
+    $(".input").val() === "임"
+  ) {
+    $(".product-card__container").html("");
+    $(".product-price__container").html("");
+    MakeProductCard(1);
+    inputProductData(0, 1);
+  } else if (
+    $(".input").val() === "천" ||
+    $(".input").val() === "연" ||
+    $(".input").val() === "디" ||
+    $(".input").val() === "퓨" ||
+    $(".input").val() === "저" ||
+    $(".input").val() === "세" ||
+    $(".input").val() === "트"
+  ) {
+    $(".product-card__container").html("");
+    $(".product-price__container").html("");
+    MakeProductCard(1);
+    inputProductData(0, 2);
+  } else if (
+    $(".input").val() === "시" ||
+    $(".input").val() === "한" ||
+    $(".input").val() === "세" ||
+    $(".input").val() === "큘" ||
+    $(".input").val() === "이" ||
+    $(".input").val() === "터"
+  ) {
+    $(".product-card__container").html("");
+    $(".product-price__container").html("");
+    MakeProductCard(1);
+    inputProductData(0, 3);
+  }
+});
